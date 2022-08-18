@@ -1,6 +1,6 @@
  # Cockpit V1 CMS Vercel Deploys Addon
 
-This addon provides integration with vercel deploys mechanism, leveraging the Vercel REST API to retrieve list of latest deploys and build hooks to trigger a new deploy. The addon can be useful when combining Cockpit CMS with an static site generator hosted on Vercel, so changes on contents can be deployed easily in seconds. Inpiration from https://github.com/pauloamgomes/CockpitCMS-Netlify
+This addon provides integration with vercel deploys mechanism, leveraging the Vercel REST API to retrieve list of latest deploys and build hooks to trigger a new deploy. The addon can be useful when combining Cockpit CMS with an static site generator hosted on Vercel, so changes on contents can be deployed easily in seconds. Inspiration from https://github.com/pauloamgomes/CockpitCMS-Netlify
 
 ## Installation
 
