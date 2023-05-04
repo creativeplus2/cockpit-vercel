@@ -28,14 +28,14 @@ class Admin extends AuthController
     
         $build_hook_url = $this->settings['build_hook_url'];
         $api_url = $this->settings['api_url'];
-        $projectid = $this->settings['projectid'];
+        $project_name = $this->settings['project_name'];
         $token = $this->settings['token'];
 
     
         return $this->render('vercel:views/index.php', [
             'build_hook_url' => $build_hook_url,
             'api_url' => $api_url,
-            'projectid' => $projectid,
+            'project_name' => $project_name,
             'token' => $token
         ]);
         
