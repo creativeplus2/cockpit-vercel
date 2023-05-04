@@ -17,7 +17,7 @@ This addon provides integration with vercel deploys mechanism, leveraging the Ve
 vercel:
   build_hook_url: https://api.vercel.com/v1/integrations/deploy/<hook_id>
   api_url: https://api.vercel.com/v6/deployments
-  projectid: <project-id>
+  project_name: <project_name>
   token: <token>
 ```
 
