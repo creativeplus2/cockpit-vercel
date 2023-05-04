@@ -12,7 +12,7 @@
 <div class="uk-hidden">
     <div class="build_hook_url">{{ $build_hook_url }}</div>
     <div class="api_url">{{ $api_url }}</div>
-    <div class="projectid">{{ $projectid }}</div>
+    <div class="project_name">{{ $project_name }}</div>
     <div class="token">{{ $token }}</div>
 </div>
 
@@ -50,7 +50,7 @@
 <script>
 var build_hook_url = document.querySelector('.build_hook_url').textContent;
 var api_url = document.querySelector('.api_url').textContent;
-var projectid = document.querySelector('.projectid').textContent;
+var project_name = document.querySelector('.project_name').textContent;
 var token = document.querySelector('.token').textContent;
 
 
@@ -91,7 +91,7 @@ function deployVercel(){
 async function getVercel() {
     
     try {
-        let res = await fetch( api_url + '?projectid=' + projectid, {
+        let res = await fetch( api_url, {
             method: 'GET',
             headers: { 'Authorization': 'Bearer '+ token }
         });
@@ -108,10 +108,12 @@ async function renderVercel() {
     
     try {
         let getdatas = await getVercel();
+        const datas = getdatas.deployments;
+        const datas2 = datas.filter(p => p.name === project_name);
 
         let html = '';
         
-        getdatas.deployments.map(deploy => {
+        datas2.map(deploy => {
             let htmlSegment = 
             `<tr>
                 <td><span class="uk-badge uk-badge-outline uk-text-muted">${new Date(deploy.created)}</span></td>
